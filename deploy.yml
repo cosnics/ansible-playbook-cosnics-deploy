@@ -20,4 +20,4 @@
 
   roles:
     - f500.project_deploy
-    - deploy
+    - ansible-role-cosnics-deploy
