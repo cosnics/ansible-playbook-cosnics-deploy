@@ -1,0 +1,6 @@
+database_host: "localhost"
+database_name: "chamilo2015-16"
+database_username: "root"
+database_password: "mysql"
+security_key: "123456"
+hashing_algorithm: "sha1"

@@ -1,0 +1,23 @@
+- name: Deploy
+  hosts: "{{hosts}}"
+  remote_user: "{{remote_user}}"
+
+  pre_tasks:
+    - fail: msg="extra-var hosts not defined"
+      when: hosts is not defined
+    - fail: msg="extra-var project_root not defined"
+      when: project_root is not defined
+    - fail: msg="extra-var project_local_path not defined"
+      when: project_local_path is not defined
+
+  vars:
+     #project_root: "path where to deploy"
+     #project_local_path: "path to rsync source"
+
+  post_tasks:
+    - name: Remove old releases
+      deploy_helper: path="{{ project_root }}" state=clean release={{ deploy_helper.new_release }}
+
+  roles:
+    - f500.project_deploy
+    - deploy
