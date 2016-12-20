@@ -1,0 +1,4 @@
+- src: https://github.com/pjbro/ansible-role-cosnics-deploy
+  version: master
+  name: cosnics-deploy
+- src: f500.project_deploy
