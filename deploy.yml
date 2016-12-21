@@ -19,5 +19,5 @@
       deploy_helper: path="{{ project_root }}" state=clean release={{ deploy_helper.new_release }}
 
   roles:
+    - cosnics-deploy #the main task needs to be run first te ensure the cosnics_deploy_role_path variable is set correctly
     - f500.project_deploy
-    - cosnics-deploy
