@@ -11,6 +11,7 @@
       when: project_local_path is not defined
 
   vars:
+    on_cosnics_finalize: tasks/on_cosnics_finalize
      #project_root: "path where to deploy"
      #project_local_path: "path to rsync source"
 

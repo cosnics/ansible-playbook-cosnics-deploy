@@ -1,0 +1,10 @@
+---
+- template:
+    src: templates/installation-fixtures.sql.j2
+    dest: /tmp/import-{{cosnics_deploy_database_name}}.sql
+    owner: jenkins
+- name: create fresh database
+  mysql_db:
+    state: import
+    name: all
+    target: /tmp/import-{{cosnics_deploy_database_name}}.sql
