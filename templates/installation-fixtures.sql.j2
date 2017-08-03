@@ -28,9 +28,9 @@ CREATE DATABASE IF NOT EXISTS `{{cosnics_deploy_database_name}}` DEFAULT CHARACT
 
 CREATE DATABASE IF NOT EXISTS `{{cosnics_deploy_test_database_name}}` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 
-GRANT ALL PRIVILEGES ON `{{cosnics_deploy_database_name}}`.* TO '{{cosnics_deploy_database_username}}'@'%' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON `{{cosnics_deploy_database_name}}`.* TO '{{cosnics_deploy_database_username}}'@'localhost' WITH GRANT OPTION;
 
-GRANT ALL PRIVILEGES ON `{{cosnics_deploy_test_database_name}}`.* TO '{{cosnics_deploy_database_username}}'@'%' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON `{{cosnics_deploy_test_database_name}}`.* TO '{{cosnics_deploy_database_username}}'@'localhost' WITH GRANT OPTION;
 
 USE `{{cosnics_deploy_database_name}}`;
 
