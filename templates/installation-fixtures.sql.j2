@@ -30,6 +30,8 @@ CREATE DATABASE IF NOT EXISTS `{{cosnics_deploy_test_database_name}}` DEFAULT CH
 
 GRANT ALL PRIVILEGES ON `{{cosnics_deploy_database_name}}`.* TO '{{cosnics_deploy_database_username}}'@'%' WITH GRANT OPTION;
 
+GRANT ALL PRIVILEGES ON `{{cosnics_deploy_test_database_name}}`.* TO '{{cosnics_deploy_database_username}}'@'%' WITH GRANT OPTION;
+
 USE `{{cosnics_deploy_database_name}}`;
 
 -- --------------------------------------------------------
