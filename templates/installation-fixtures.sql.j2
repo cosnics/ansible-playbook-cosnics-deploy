@@ -8,8 +8,17 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
-CREATE DATABASE IF NOT EXISTS `cosnics-master` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `cosnics-master`;
+DROP DATABASE IF EXISTS `{{cosnics_deploy_database_name}}`;
+
+CREATE DATABASE IF NOT EXISTS `{{cosnics_deploy_database_name}}` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+
+CREATE DATABASE IF NOT EXISTS `{{cosnics_deploy_test_database_name}}` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+
+GRANT ALL PRIVILEGES ON `{{cosnics_deploy_database_name}}`.* TO '{{cosnics_deploy_database_username}}'@'localhost';
+
+GRANT ALL PRIVILEGES ON `{{cosnics_deploy_test_database_name}}`.* TO '{{cosnics_deploy_database_username}}'@'localhost';
+
+USE `{{cosnics_deploy_database_name}}`;
 
 CREATE TABLE IF NOT EXISTS `admin_announcement_publication` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
