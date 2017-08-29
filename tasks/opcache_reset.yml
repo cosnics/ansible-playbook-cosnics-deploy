@@ -1,0 +1,16 @@
+- name: generate random string
+  set_fact:
+    rand: "{{ 100 | random }}"
+    run_once: true
+- name: create secure opcache reset endpoint
+  src: templates/opcache-reset.php.j2
+  dest: "{{ deploy_helper.new_release_path }}/web/opcache-reset-{{rand}}.php"
+  group: "{{cosnics_deploy_group}}"
+- name: Reset the opcache
+  uri:
+    url: "{{ cosnics_url }}/opcache-rest-{{rand}}.php"
+    return_content: yes
+  run_once: true
+  register: cosnics_deploy_opcache_result
+- debug: msg="{{ cosnics_deploy_opcache_result.content }}"
+  when: cosnics_deploy_opcache_reset
