@@ -8,7 +8,7 @@
   group: "{{cosnics_deploy_group}}"
 - name: Reset the opcache
   uri:
-    url: "{{ cosnics_url }}/opcache-rest-{{rand}}.php"
+    url: "{{ cosnics_url }}/opcache-reset-{{rand}}.php"
     return_content: yes
   run_once: true
   register: cosnics_deploy_opcache_result
