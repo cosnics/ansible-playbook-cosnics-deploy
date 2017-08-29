@@ -3,9 +3,10 @@
     rand: "{{ 100 | random }}"
     run_once: true
 - name: create secure opcache reset endpoint
-  src: templates/opcache-reset.php.j2
-  dest: "{{ deploy_helper.new_release_path }}/web/opcache-reset-{{rand}}.php"
-  group: "{{cosnics_deploy_group}}"
+  template:
+    src: templates/opcache-reset.php.j2
+    dest: "{{ deploy_helper.new_release_path }}/web/opcache-reset-{{rand}}.php"
+    group: "{{cosnics_deploy_group}}"
 - name: Reset the opcache
   uri:
     url: "{{ cosnics_url }}/opcache-reset-{{rand}}.php"
