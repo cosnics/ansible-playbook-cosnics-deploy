@@ -4313,6 +4313,10 @@ CREATE TABLE IF NOT EXISTS `weblcms_rights_location_locked_right` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 COMMIT;
 
+INSERT INTO `configuration_setting` (`id`, `context`, `variable`, `value`, `user_setting`) VALUES (NULL, ‘Chamilo\\Core\\Admin’, ‘maintenance_warning_show’, ‘0’, ‘0’),
+  (NULL, ‘Chamilo\\Core\\Admin’, ‘maintenance_warning_message’, NULL, ‘0’),
+  (NULL, ‘Chamilo\\Core\\Admin’, ‘maintenance_block_access’, 0, ‘0’);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
