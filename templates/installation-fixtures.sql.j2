@@ -663,7 +663,10 @@ INSERT INTO `configuration_setting` (`id`, `context`, `variable`, `value`, `user
 (185, 'Chamilo\\Application\\Calendar\\Extension\\Office365', 'client_secret', '', 0),
 (186, 'Chamilo\\Application\\Calendar\\Extension\\Office365', 'token', '', 1),
 (187, 'Chamilo\\Application\\Calendar\\Extension\\Office365', 'tenant_id', '', 0),
-(188, 'Chamilo\\Application\\Calendar\\Extension\\Office365', 'tenant_name', '', 0);
+(188, 'Chamilo\\Application\\Calendar\\Extension\\Office365', 'tenant_name', '', 0),
+(189, 'Chamilo\\Core\\Admin', 'maintenance_warning_show', '0', 0),
+(190, 'Chamilo\\Core\\Admin', 'maintenance_warning_message', NULL, 0),
+(191, 'Chamilo\\Core\\Admin', 'maintenance_block_access', '0', 0);
 
 CREATE TABLE IF NOT EXISTS `group_group` (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -4312,11 +4315,6 @@ CREATE TABLE IF NOT EXISTS `weblcms_rights_location_locked_right` (
   KEY `wrllr_location_id` (`location_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 COMMIT;
-
-INSERT INTO `configuration_setting` (`id`, `context`, `variable`, `value`, `user_setting`) VALUES
-(NULL, 'Chamilo\\Core\\Admin', 'maintenance_warning_show', '0', 0),
-(NULL, 'Chamilo\\Core\\Admin', 'maintenance_warning_message', NULL, 0),
-(NULL, 'Chamilo\\Core\\Admin', 'maintenance_block_access', '0', 0);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
