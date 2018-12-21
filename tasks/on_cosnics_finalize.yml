@@ -8,3 +8,8 @@
     state: import
     name: all
     target: /tmp/import-{{cosnics_deploy_database_name}}.sql
+- name: updates
+  mysql_db:
+    state: import
+    name: all
+    target: "{{ deploy_helper.new_release_path }}/changes2019.sql"
