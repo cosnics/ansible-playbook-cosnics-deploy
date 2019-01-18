@@ -1,0 +1,2 @@
+cosnics_deploy_test_database_name: "cosnics_{{branch | replace('/', '_')}}_test"
+cosnics_deploy_database_name: "cosnics_{{branch | replace('/', '_')}}"
