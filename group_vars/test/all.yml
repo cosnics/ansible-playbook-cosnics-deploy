@@ -1,1 +1,0 @@
-cosnics_deploy_database_name: "cosnics_{{branch | replace('/', '_')}}"
