@@ -6,7 +6,7 @@
 - name: create fresh database
   mysql_db:
     state: import
-    name: "{{cosnics_deploy_database_name}}"
+    name: {{cosnics_deploy_database_name}}
     target: /tmp/import-{{cosnics_deploy_database_name}}.sql
 - name: updates
   mysql_db:
